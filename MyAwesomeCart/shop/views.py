@@ -11,11 +11,11 @@ from django.http import HttpResponse
 MERCHANT_KEY = 'GALIc0RFTvTP0Sy#'
 
 def index(request):
-    allProds = []
-    catprods = Product.objects.values('category', 'id')
-    cats = {item['category'] for item in catprods}
-    for cat in cats:
-        prod = Product.objects.filter(category=cat)
+    allProds = []  #empty list defined
+    catprods = Product.objects.values('category', 'id')  #we are storing the values of all catogry and id in catprods if we not need id then we will remove it from here
+    cats = {item['category'] for item in catprods}  #we are using set comprehensive to fetch item category in catprods
+    for cat in cats:   # fetching a catogry in categories
+        prod = Product.objects.filter(category=cat)   #iski catogry ho jaye barab aar cat
         n = len(prod)
         nSlides = n // 4 + ceil((n / 4) - (n // 4))
         allProds.append([prod, range(1, nSlides), nSlides])

@@ -36,7 +36,11 @@ class Orders(models.Model):
     city = models.CharField(max_length=111)
     state = models.CharField(max_length=111)
     zip_code = models.CharField(max_length=111)
-    phone = models.CharField(max_length=111, default="")
+    phone = models.CharField(max_length=111, default="")    # default dala gya hai kunki first time jab ye line add kiya gya iss table me aur 
+                                                            # me aur mpython manage.py makemigration kiya gya to error dega ki bhai abhi phone add kar rhe ho 
+                                                            # lekin jab pahle phone add nhi tha to data base me to koi aisa phobe name ke corresponding koi data nahi tha
+                                                            # to abhi isme kya data dalna hai 
+                                                            # therefore it is passed default int it and it is kept vacant 
 
 class OrderUpdate(models.Model):
     update_id  = models.AutoField(primary_key=True)
@@ -45,5 +49,7 @@ class OrderUpdate(models.Model):
     timestamp = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.update_desc[0:7] + "..."
+        return self.update_desc[0:7] + "..."   # return names of product in the list when we login as admin and add product it will not 
+                                               #it will not show product object 1 or product object 2
+
 

@@ -1,4 +1,4 @@
-{% extends 'shop/basic.html' %}
+{% extends 'shop/basic.html' %}   <!-- it is written to use code of basic .html to decrease no of line of code-->
 {% block title%} MyAwesomeCart - Best Ecommerce Website{% endblock %}
 {% block css %}
 .col-md-3
@@ -53,16 +53,16 @@ padding-right: 0;
                 <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>
                 {% endfor %}
             </ul>
-            <div class="container carousel-inner no-padding">
-                <div class="carousel-item active">
+            <div class="container carousel-inner no-padding">     <!--ccvvvvvvv-->
+                <div class="carousel-item active">              <!--ccvvvvvvv  active crousel-->
                     {% for i in product %}
-                    <div class="col-xs-3 col-sm-3 col-md-3">
+                    <div class="col-xs-3 col-sm-3 col-md-3">                <!--ccvvvvvvv-->
                         <div class="card align-items-center" style="width: 18rem;">
                             <img src='/media/{{i.image}}' class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name}}</h5>
-                                <p class="card-text">{{i.desc|slice:"0:53"}}...</p>
-                                <h6 class="card-title" >Price: <span id="pricepr{{i.id}}">{{i.price}}</span></h6>
+                                <p class="card-text">{{i.desc|slice:"0:53"}}...</p>                 <!--ccvvvvvvv-->
+                                <h6 class="card-title" >Price: <span id="pricepr{{i.id}}">{{i.price}}</span></h6>           <!--ccvvvvvvv-->
                                 <span id="divpr{{i.id}}" class="divpr">
                                     <button id="pr{{i.id}}" class="btn btn-primary cart">Add To Cart</button>
                                 </span>
@@ -79,16 +79,16 @@ padding-right: 0;
             </div>
         </div>
         <!-- left and right controls for the slide -->
-        <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+        <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">   <!--ccvvvvvvv-->
             <span class="carousel-control-prev-icon"></span>
         </a>
-        <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
+        <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">      <!--ccvvvvvvv-->
             <span class="carousel-control-next-icon"></span>
         </a>
     </div>
     {% endfor %}
 </div>
-{% endblock %}
+{% endblock %}     <!--ccvvvvvvv-->
 {% block js %}
 <script>
 // Find out the cart items from localStorage

@@ -21,7 +21,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('shop/', include('shop.urls')),
+    path('shop/', include('shop.urls')),  # this line is doing that it saying that if shop exist or not if yes
+                                         # then include kya bolta hai ki baaki cheez shop .url se baat karo
     path('blog/', include('blog.urls')),
     path('', views.index)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

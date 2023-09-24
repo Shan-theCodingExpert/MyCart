@@ -122,5 +122,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Managing media
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # for recommende method to insert image of product// it is stored in base directry inside that is media ,stored in this/// Aur models me img ke corresponding dala tha ki shop me image ke andar dalo so it stored in media/shop/image
 MEDIA_URL = '/media/'
